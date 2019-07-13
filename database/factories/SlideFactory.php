@@ -24,6 +24,8 @@ $factory->define(\App\Models\Slide::class, function (Faker $faker) {
         'title' => $faker->words(3, true),
         'content' => $faker->realText(),
         'action_button' => $faker->sentence(),
-        'story_id' => random_int(1, 10)
+        'story_id' => random_int(1, 10),
+        'score' => 0,
+        'order' => 0
     ];
 });

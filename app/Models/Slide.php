@@ -12,7 +12,7 @@ class Slide extends Model
      * @var array
      */
     protected $fillable = [
-        'type', 'media_url', 'title', 'content', 'action_button', 'story_id'
+        'type', 'media_url', 'title', 'content', 'action_button', 'story_id', 'score', 'order'
     ];
 
     /**
@@ -34,6 +34,8 @@ class Slide extends Model
         'media_url' => 'string',
         'title' => 'string',
         'action_button' => 'string',
+        'scope' => 'integer',
+        'order' => 'integer',
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];

@@ -16,7 +16,7 @@ class VisitResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'visitor_ip' => $this->visitor_ip,
+            'uuid' => $this->uuid,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'story_performance_data' => StoryPerformanceDataResource::collection($this->whenLoaded('story_performance_data')),

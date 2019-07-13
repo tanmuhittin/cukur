@@ -15,7 +15,7 @@ class CreateVisitsTable extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->ipAddress('visitor_ip');
+            $table->uuid('uuid');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

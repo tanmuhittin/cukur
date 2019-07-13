@@ -20,6 +20,8 @@ class CreateSlidesTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('action_button');
+            $table->bigInteger('score');
+            $table->bigInteger('order');
             $table->unsignedBigInteger('story_id')->nullable();
             $table->foreign('story_id')->references('id')->on('stories');
             $table->timestamp('created_at')->nullable();

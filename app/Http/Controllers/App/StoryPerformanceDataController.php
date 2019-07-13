@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoryPerformanceDataRequest;
 use App\Models\StoryPerformanceData;
 use App\Http\Resources\StoryPerformanceDataResource;
+use App\Models\Visit;
 use Illuminate\Http\Request;
 
 class StoryPerformanceDataController extends Controller
@@ -19,22 +21,15 @@ class StoryPerformanceDataController extends Controller
         return new StoryPerformanceDataResource($storyPerformanceData->load(['story', 'visit']));
     }
 
-    public function store(Request $request)
+    public function store(StoryPerformanceDataRequest $request)
     {
-        return new StoryPerformanceDataResource(StoryPerformanceData::create($request->all()));
+        $visit_id = Visit::where('uuid', $request->get('uuid'))->first()->id;
+        $story_data = StoryPerformanceData::firstOrNew([
+            'visit_id'=> $visit_id,
+            'story_id'=> $request->get('story_id')
+        ]);
+        $story_data[$request->get('data_label')] = $request->get('data_value');
+        return $story_data->save();
     }
 
-    public function update(Request $request, StoryPerformanceData $storyPerformanceData)
-    {
-        $storyPerformanceData->update($request->all());
-
-        return new StoryPerformanceDataResource($storyPerformanceData);
-    }
-
-    public function destroy(Request $request, StoryPerformanceData $storyPerformanceData)
-    {
-        $storyPerformanceData->delete();
-
-        return response()->json([], \Illuminate\Http\Response::HTTP_NO_CONTENT);
-    }
 }

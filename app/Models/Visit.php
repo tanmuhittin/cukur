@@ -12,7 +12,7 @@ class Visit extends Model
      * @var array
      */
     protected $fillable = [
-        'visitor_ip'
+        'uuid'
     ];
 
     /**
