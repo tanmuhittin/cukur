@@ -36,6 +36,15 @@ class Story extends Model
     ];
 
     /**
+     * Get the Slides for the Story.
+     */
+    public function slides()
+    {
+        return $this->hasMany(\App\Slide::class);
+    }
+
+
+    /**
      * Get the StoryPerformanceData for the Story.
      */
     public function storyPerformanceData()

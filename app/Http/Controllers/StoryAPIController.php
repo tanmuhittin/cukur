@@ -15,7 +15,7 @@ class StoryAPIController extends Controller
  
     public function show(Story $story)
     {
-        return new StoryResource($story->load(['storyPerformanceData', 'product']));
+        return new StoryResource($story->load(['slides', 'storyPerformanceData', 'product']));
     }
 
     public function store(Request $request)

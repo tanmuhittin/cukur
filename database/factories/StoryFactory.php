@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(Story::class, function (Faker $faker) {
     return [
-        'image_url' => $faker->sentence(),
+        'image_url' => $faker->imageUrl(64,64),
         'description' => $faker->realText(),
         'product_id' => random_int(1, 10)
     ];

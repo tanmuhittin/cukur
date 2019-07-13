@@ -12,7 +12,7 @@ class Slide extends Model
      * @var array
      */
     protected $fillable = [
-        'type', 'media_url', 'title', 'content', 'action_button'
+        'type', 'media_url', 'title', 'content', 'action_button', 'story_id'
     ];
 
     /**
@@ -44,6 +44,15 @@ class Slide extends Model
     public function slidePerformanceData()
     {
         return $this->hasMany(\App\SlidePerformanceData::class);
+    }
+
+
+    /**
+     * Get the Story for the Slide.
+     */
+    public function story()
+    {
+        return $this->belongsTo(\App\Story::class);
     }
 
 }

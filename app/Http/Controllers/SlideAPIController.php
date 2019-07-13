@@ -15,7 +15,7 @@ class SlideAPIController extends Controller
  
     public function show(Slide $slide)
     {
-        return new SlideResource($slide->load(['slidePerformanceData']));
+        return new SlideResource($slide->load(['slidePerformanceData', 'story']));
     }
 
     public function store(Request $request)
