@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\App;
 
-use App\Http\Controller;
+use App\Http\Controllers\Controller;
 use App\Models\SlidePerformanceData;
 use App\Http\Resources\SlidePerformanceDataResource;
- 
+
 class SlidePerformanceDataController extends Controller
 {
     public function index()
     {
         return new SlidePerformanceDataCollection(SlidePerformanceData::paginate());
     }
- 
+
     public function show(SlidePerformanceData $slidePerformanceData)
     {
         return new SlidePerformanceDataResource($slidePerformanceData->load(['slide', 'visit']));

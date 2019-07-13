@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\App;
 
 use App\Models\Slide;
-use App\Http\Controller;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\SlideResource;
- 
+
 class SlideController extends Controller
 {
     public function index()
     {
         return SlideResource::collection(Slide::paginate());
     }
- 
+
     public function show(Slide $slide)
     {
         return new SlideResource($slide->load(['slidePerformanceData', 'story']));

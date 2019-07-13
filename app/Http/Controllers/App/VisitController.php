@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\App;
 
 use App\Models\Visit;
-use App\Http\Controller;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\VisitResource;
- 
+
 class VisitController extends Controller
 {
     public function index()
     {
         return VisitResource::collection(Visit::paginate());
     }
- 
+
     public function show(Visit $visit)
     {
         return new VisitResource($visit->load(['storyPerformanceData', 'slidePerformanceData']));

@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\App;
 
 use App\Models\User;
-use App\Http\Controller;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
- 
+
 class UserController extends Controller
 {
     public function index()
     {
         return UserCollection::collection(User::paginate());
     }
- 
+
     public function show(User $user)
     {
         return new UserResource($user->load([]));

@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\App;
 
 use App\Models\Product;
-use App\Http\Controller;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
- 
+
 class ProductController extends Controller
 {
     public function index()
     {
         return ProductResource::collection(Product::paginate());
     }
- 
+
     public function show(Product $product)
     {
         return new ProductResource($product->load(['stories']));
