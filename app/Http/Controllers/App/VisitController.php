@@ -5,6 +5,7 @@ namespace App\Http\Controllers\App;
 use App\Models\Visit;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\VisitResource;
+use Illuminate\Http\Request;
 
 class VisitController extends Controller
 {

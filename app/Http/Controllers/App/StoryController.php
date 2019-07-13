@@ -5,12 +5,13 @@ namespace App\Http\Controllers\App;
 use App\Models\Story;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\StoryResource;
+use Illuminate\Http\Request;
 
 class StoryController extends Controller
 {
     public function index()
     {
-        return StoryCollection::collection(Story::paginate());
+        return StoryResource::collection(Story::paginate());
     }
 
     public function show(Story $story)

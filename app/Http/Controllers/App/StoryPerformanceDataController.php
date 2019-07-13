@@ -5,12 +5,13 @@ namespace App\Http\Controllers\App;
 use App\Http\Controllers\Controller;
 use App\Models\StoryPerformanceData;
 use App\Http\Resources\StoryPerformanceDataResource;
+use Illuminate\Http\Request;
 
 class StoryPerformanceDataController extends Controller
 {
     public function index()
     {
-        return StoryPerformanceDataCollection::collection(StoryPerformanceData::paginate());
+        return StoryPerformanceDataResource::collection(StoryPerformanceData::paginate());
     }
 
     public function show(StoryPerformanceData $storyPerformanceData)

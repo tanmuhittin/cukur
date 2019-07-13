@@ -5,12 +5,13 @@ namespace App\Http\Controllers\App;
 use App\Http\Controllers\Controller;
 use App\Models\SlidePerformanceData;
 use App\Http\Resources\SlidePerformanceDataResource;
+use Illuminate\Http\Request;
 
 class SlidePerformanceDataController extends Controller
 {
     public function index()
     {
-        return new SlidePerformanceDataCollection(SlidePerformanceData::paginate());
+        return new SlidePerformanceDataResource(SlidePerformanceData::paginate());
     }
 
     public function show(SlidePerformanceData $slidePerformanceData)
