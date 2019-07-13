@@ -12,6 +12,6 @@ class StoryPerformanceDataSeeder extends Seeder
      */
     public function run()
     {
-        factory(StoryPerformanceData::class, 10)->create();
+        factory(\App\Models\StoryPerformanceData::class, 10)->create();
     }
 }
