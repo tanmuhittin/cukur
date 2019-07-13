@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
-use App\Visit;
-use App\Http\Resources\VisitCollection;
+use App\Models\Visit;
+use App\Http\Controller;
 use App\Http\Resources\VisitResource;
  
-class VisitAPIController extends Controller
+class VisitController extends Controller
 {
     public function index()
     {
-        return new VisitCollection(Visit::paginate());
+        return VisitResource::collection(Visit::paginate());
     }
  
     public function show(Visit $visit)

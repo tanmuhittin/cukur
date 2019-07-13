@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
-use App\SlidePerformanceData;
-use App\Http\Resources\SlidePerformanceDataCollection;
+use App\Http\Controller;
+use App\Models\SlidePerformanceData;
 use App\Http\Resources\SlidePerformanceDataResource;
  
-class SlidePerformanceDataAPIController extends Controller
+class SlidePerformanceDataController extends Controller
 {
     public function index()
     {

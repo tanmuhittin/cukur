@@ -14,39 +14,16 @@ use Illuminate\Routing\Router;
 |
 */
 
-/*
-* Snippet for a quick route reference
-*/
-Route::get('/', function (Router $router) {
-    return collect($router->getRoutes()->getRoutesByMethod()["GET"])->map(function($value, $key) {
-        return url($key);
-    })->values();   
-});
+Route::apiResource('stories', 'App\StoryController');
 
-Route::resource('stories', 'StoryAPIController', [
-    'only' => ['index', 'show', 'store', 'update', 'destroy']
-]);
+Route::apiResource('products', 'App\ProductController');
 
-Route::resource('products', 'ProductAPIController', [
-    'only' => ['index', 'show', 'store', 'update', 'destroy']
-]);
+Route::apiResource('slides', 'App\SlideController');
 
-Route::resource('slides', 'SlideAPIController', [
-    'only' => ['index', 'show', 'store', 'update', 'destroy']
-]);
+Route::apiResource('visits', 'App\VisitController');
 
-Route::resource('visits', 'VisitAPIController', [
-    'only' => ['index', 'show', 'store', 'update', 'destroy']
-]);
+Route::apiResource('storyPerformanceData', 'App\StoryPerformanceDataController');
 
-Route::resource('storyPerformanceData', 'StoryPerformanceDataAPIController', [
-    'only' => ['index', 'show', 'store', 'update', 'destroy']
-]);
+Route::apiResource('slidePerformanceData', 'App\SlidePerformanceDataController');
 
-Route::resource('slidePerformanceData', 'SlidePerformanceDataAPIController', [
-    'only' => ['index', 'show', 'store', 'update', 'destroy']
-]);
-
-Route::resource('users', 'UserAPIController', [
-    'only' => ['index', 'show', 'store', 'update', 'destroy']
-]);
+Route::apiResource('users', 'App\UserController');

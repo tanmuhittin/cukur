@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
-use App\Story;
-use App\Http\Resources\StoryCollection;
+use App\Models\Story;
+use App\Http\Controller;
 use App\Http\Resources\StoryResource;
  
-class StoryAPIController extends Controller
+class StoryController extends Controller
 {
     public function index()
     {
-        return new StoryCollection(Story::paginate());
+        return StoryCollection::collection(Story::paginate());
     }
  
     public function show(Story $story)

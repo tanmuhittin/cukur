@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
-use App\StoryPerformanceData;
-use App\Http\Resources\StoryPerformanceDataCollection;
+use App\Http\Controller;
+use App\Models\StoryPerformanceData;
 use App\Http\Resources\StoryPerformanceDataResource;
  
-class StoryPerformanceDataAPIController extends Controller
+class StoryPerformanceDataController extends Controller
 {
     public function index()
     {
-        return new StoryPerformanceDataCollection(StoryPerformanceData::paginate());
+        return StoryPerformanceDataCollection::collection(StoryPerformanceData::paginate());
     }
  
     public function show(StoryPerformanceData $storyPerformanceData)

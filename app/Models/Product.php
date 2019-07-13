@@ -1,22 +1,18 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Product extends Model
 {
-    use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password'
+        'title', 'data'
     ];
 
     /**
@@ -25,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token'
+        //
     ];
 
     /**
@@ -34,12 +30,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'name' => 'string',
-        'email' => 'string',
-        'email_verified_at' => 'datetime',
-        'password' => 'string',
-        'remember_token' => 'string',
+        'title' => 'string',
+        'data' => 'object',
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];
+
+    /**
+     * Get the Stories for the Product.
+     */
+    public function stories()
+    {
+        return $this->hasMany(\App\Story::class);
+    }
+
 }

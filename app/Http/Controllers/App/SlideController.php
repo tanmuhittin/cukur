@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
-use App\Slide;
-use App\Http\Resources\SlideCollection;
+use App\Models\Slide;
+use App\Http\Controller;
 use App\Http\Resources\SlideResource;
  
-class SlideAPIController extends Controller
+class SlideController extends Controller
 {
     public function index()
     {
-        return new SlideCollection(Slide::paginate());
+        return SlideResource::collection(Slide::paginate());
     }
  
     public function show(Slide $slide)

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
-use App\User;
-use App\Http\Resources\UserCollection;
+use App\Models\User;
+use App\Http\Controller;
 use App\Http\Resources\UserResource;
  
-class UserAPIController extends Controller
+class UserController extends Controller
 {
     public function index()
     {
-        return new UserCollection(User::paginate());
+        return UserCollection::collection(User::paginate());
     }
  
     public function show(User $user)

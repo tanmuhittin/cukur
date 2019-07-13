@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
-use App\Product;
-use App\Http\Resources\ProductCollection;
+use App\Models\Product;
+use App\Http\Controller;
 use App\Http\Resources\ProductResource;
  
-class ProductAPIController extends Controller
+class ProductController extends Controller
 {
     public function index()
     {
-        return new ProductCollection(Product::paginate());
+        return ProductResource::collection(Product::paginate());
     }
  
     public function show(Product $product)
