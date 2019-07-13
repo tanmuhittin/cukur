@@ -1,0 +1,66 @@
+version: '2'
+services: 
+    cukur-fpm:
+        build: ./Dockerfiles
+        restart: unless-stopped
+        environment:
+            DB_HOST: cukur-mysql
+            DB_DATABASE: cukur
+            DB_USERNAME: cukur
+            DB_PASSWORD: cukur
+            DB_CONNECTION: mysql
+        links:
+            - cukur-mysql
+        volumes:
+            - ./:/var/www
+            - ./Dockerfiles/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+        networks:
+            - app-network
+
+    cukur-webserver:
+        image: nginx:alpine
+        restart: unless-stopped
+        tty: true
+        ports:
+            - 127.0.0.1:80:80
+            - 10.50.50.113:80:80
+        volumes:
+            - ./:/var/www
+            - ./Dockerfiles/nginx/conf.d/:/etc/nginx/conf.d/
+        networks:
+            - app-network
+
+    cukur-mysql:
+        image: mysql:latest
+        restart: unless-stopped
+        ports:
+            - 127.0.0.1:3307:3306
+        command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci', '--default-authentication-plugin=mysql_native_password']
+        volumes:
+            - .docker/data/mysql:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: cukur
+            MYSQL_USER: cukur
+            MYSQL_PASSWORD: cukur
+            MYSQL_ROOT_PASSWORD: cukur
+        networks:
+            - app-network
+            
+    cukur-pma:
+        image: phpmyadmin/phpmyadmin
+        restart: unless-stopped
+        links:
+            - cukur-mysql:db
+        ports:
+            - 127.0.0.1:81:80
+            - 10.50.50.113:81:80
+        environment:
+            MYSQL_USER: cukur
+            MYSQL_PASSWORD: cukur
+            MYSQL_ROOT_PASSWORD: cukur
+        networks:
+            - app-network
+            
+networks:
+    app-network:
+        driver: bridge
