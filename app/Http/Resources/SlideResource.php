@@ -24,7 +24,7 @@ class SlideResource extends JsonResource
             'story_id' => $this->story_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'slide_performance_data' => new SlidePerformanceDataCollection($this->whenLoaded('slide_performance_data')),
+            'slide_performance_data' => new SlidePerformanceDataResource($this->whenLoaded('slide_performance_data')),
             'story' => new StoryResource($this->whenLoaded('story'))
         ];
     }

@@ -19,8 +19,8 @@ class VisitResource extends JsonResource
             'visitor_ip' => $this->visitor_ip,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'story_performance_data' => new StoryPerformanceDataCollection($this->whenLoaded('story_performance_data')),
-            'slide_performance_data' => new SlidePerformanceDataCollection($this->whenLoaded('slide_performance_data'))
+            'story_performance_data' => new StoryPerformanceDataResource($this->whenLoaded('story_performance_data')),
+            'slide_performance_data' => new SlidePerformanceDataResource($this->whenLoaded('slide_performance_data'))
         ];
     }
 }

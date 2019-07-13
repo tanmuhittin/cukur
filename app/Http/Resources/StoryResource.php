@@ -21,8 +21,8 @@ class StoryResource extends JsonResource
             'product_id' => $this->product_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'slides' => new SlideCollection($this->whenLoaded('slides')),
-            'story_performance_data' => new StoryPerformanceDataCollection($this->whenLoaded('story_performance_data')),
+            'slides' => new SlideResource($this->whenLoaded('slides')),
+            'story_performance_data' => new StoryPerformanceDataResource($this->whenLoaded('story_performance_data')),
             'product' => new ProductResource($this->whenLoaded('product'))
         ];
     }
