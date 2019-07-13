@@ -20,7 +20,7 @@ class ProductResource extends JsonResource
             'data' => $this->data,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'stories' => new StoryResource($this->whenLoaded('stories'))
+            'stories' => StoryResource::collection($this->whenLoaded('stories'))
         ];
     }
 }
