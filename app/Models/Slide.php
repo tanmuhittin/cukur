@@ -43,7 +43,7 @@ class Slide extends Model
      */
     public function slidePerformanceData()
     {
-        return $this->hasMany(\App\SlidePerformanceData::class);
+        return $this->hasMany(SlidePerformanceData::class);
     }
 
 
@@ -52,7 +52,7 @@ class Slide extends Model
      */
     public function story()
     {
-        return $this->belongsTo(\App\Story::class);
+        return $this->belongsTo(Story::class);
     }
 
 }

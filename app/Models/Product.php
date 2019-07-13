@@ -41,7 +41,7 @@ class Product extends Model
      */
     public function stories()
     {
-        return $this->hasMany(\App\Story::class);
+        return $this->hasMany(Story::class);
     }
 
 }

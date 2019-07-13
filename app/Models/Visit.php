@@ -39,7 +39,7 @@ class Visit extends Model
      */
     public function storyPerformanceData()
     {
-        return $this->hasMany(\App\StoryPerformanceData::class);
+        return $this->hasMany(StoryPerformanceData::class);
     }
 
 
@@ -48,7 +48,7 @@ class Visit extends Model
      */
     public function slidePerformanceData()
     {
-        return $this->hasMany(\App\SlidePerformanceData::class);
+        return $this->hasMany(SlidePerformanceData::class);
     }
 
 }

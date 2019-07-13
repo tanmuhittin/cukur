@@ -44,7 +44,7 @@ class StoryPerformanceData extends Model
      */
     public function story()
     {
-        return $this->belongsTo(\App\Story::class);
+        return $this->belongsTo(Story::class);
     }
 
 
@@ -53,7 +53,7 @@ class StoryPerformanceData extends Model
      */
     public function visit()
     {
-        return $this->belongsTo(\App\Visit::class);
+        return $this->belongsTo(Visit::class);
     }
 
 }

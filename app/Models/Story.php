@@ -40,7 +40,7 @@ class Story extends Model
      */
     public function slides()
     {
-        return $this->hasMany(\App\Slide::class);
+        return $this->hasMany(Slide::class);
     }
 
 
@@ -49,7 +49,7 @@ class Story extends Model
      */
     public function storyPerformanceData()
     {
-        return $this->hasMany(\App\StoryPerformanceData::class);
+        return $this->hasMany(StoryPerformanceData::class);
     }
 
 
@@ -58,7 +58,7 @@ class Story extends Model
      */
     public function product()
     {
-        return $this->belongsTo(\App\Product::class);
+        return $this->belongsTo(Product::class);
     }
 
 }

@@ -42,7 +42,7 @@ class SlidePerformanceData extends Model
      */
     public function slide()
     {
-        return $this->belongsTo(\App\Slide::class);
+        return $this->belongsTo(Slide::class);
     }
 
 
@@ -51,7 +51,7 @@ class SlidePerformanceData extends Model
      */
     public function visit()
     {
-        return $this->belongsTo(\App\Visit::class);
+        return $this->belongsTo(Visit::class);
     }
 
 }
