@@ -17,7 +17,7 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(StoryPerformanceData::class, function (Faker $faker) {
+$factory->define(\App\Models\StoryPerformanceData::class, function (Faker $faker) {
     return [
         'story_id' => random_int(1, 10),
         'visit_id' => random_int(1, 10),

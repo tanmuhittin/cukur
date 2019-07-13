@@ -17,7 +17,7 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(Visit::class, function (Faker $faker) {
+$factory->define(\App\Models\Visit::class, function (Faker $faker) {
     return [
         'visitor_ip' => $faker->ipv4
     ];

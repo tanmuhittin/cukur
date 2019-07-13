@@ -17,7 +17,7 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(SlidePerformanceData::class, function (Faker $faker) {
+$factory->define(\App\Models\SlidePerformanceData::class, function (Faker $faker) {
     return [
         'slide_id' => random_int(1, 10),
         'visit_id' => random_int(1, 10),

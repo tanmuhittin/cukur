@@ -17,7 +17,7 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(\App\Models\User::class, function (Faker $faker) {
     return [
         'name' => $faker->name(),
         'email' => $faker->unique()->safeEmail,

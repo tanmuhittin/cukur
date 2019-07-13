@@ -17,7 +17,7 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(Slide::class, function (Faker $faker) {
+$factory->define(\App\Models\Slide::class, function (Faker $faker) {
     return [
         'type' => $faker->sentence(),
         'media_url' => $faker->imageUrl(1080,1920),

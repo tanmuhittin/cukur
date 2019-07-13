@@ -17,7 +17,7 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(Product::class, function (Faker $faker) {
+$factory->define(\App\Models\Product::class, function (Faker $faker) {
     return [
         'title' => $faker->words(3, true),
         'data' => '{"title":"hello"}'
