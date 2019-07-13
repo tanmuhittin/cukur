@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,39 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+/*
+* Snippet for a quick route reference
+*/
+Route::get('/', function (Router $router) {
+    return collect($router->getRoutes()->getRoutesByMethod()["GET"])->map(function($value, $key) {
+        return url($key);
+    })->values();   
 });
+
+Route::resource('stories', 'StoryAPIController', [
+    'only' => ['index', 'show', 'store', 'update', 'destroy']
+]);
+
+Route::resource('products', 'ProductAPIController', [
+    'only' => ['index', 'show', 'store', 'update', 'destroy']
+]);
+
+Route::resource('slides', 'SlideAPIController', [
+    'only' => ['index', 'show', 'store', 'update', 'destroy']
+]);
+
+Route::resource('visits', 'VisitAPIController', [
+    'only' => ['index', 'show', 'store', 'update', 'destroy']
+]);
+
+Route::resource('storyPerformanceData', 'StoryPerformanceDataAPIController', [
+    'only' => ['index', 'show', 'store', 'update', 'destroy']
+]);
+
+Route::resource('slidePerformanceData', 'SlidePerformanceDataAPIController', [
+    'only' => ['index', 'show', 'store', 'update', 'destroy']
+]);
+
+Route::resource('users', 'UserAPIController', [
+    'only' => ['index', 'show', 'store', 'update', 'destroy']
+]);
