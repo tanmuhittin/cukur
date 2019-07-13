@@ -5,6 +5,7 @@ use App\Slide;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Carbon\Carbon;
+use App\Enums\SlideType;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ use Carbon\Carbon;
 
 $factory->define(\App\Models\Slide::class, function (Faker $faker) {
     return [
-        'type' => $faker->sentence(),
+        'type' => SlideType::Image,
         'media_url' => $faker->imageUrl(1080,1920),
         'title' => $faker->words(3, true),
         'content' => $faker->realText(),
