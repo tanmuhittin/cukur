@@ -1,0 +1,17 @@
+{
+  "message": "The given data was invalid.",
+  "errors": {
+    "uuid": [
+      "The uuid field is required."
+    ],
+    "story_id": [
+      "The story id field is required."
+    ],
+    "data_label": [
+      "The data label field is required."
+    ],
+    "data_value": [
+      "The data value field is required."
+    ]
+  }
+}

@@ -23,7 +23,8 @@ class StoryPerformanceDataController extends Controller
 
     public function store(StoryPerformanceDataRequest $request)
     {
-        $visit_id = Visit::where('uuid', $request->get('uuid'))->first()->id;
+        return 1;
+        $visit_id = Visit::firstOrCreate(['uuid'=>$request->get('uuid')])->id;
         $story_data = StoryPerformanceData::firstOrNew([
             'visit_id'=> $visit_id,
             'story_id'=> $request->get('story_id')

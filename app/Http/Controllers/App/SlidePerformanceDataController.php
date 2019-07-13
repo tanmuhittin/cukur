@@ -24,7 +24,8 @@ class SlidePerformanceDataController extends Controller
 
     public function store(SlidePerformanceDataRequest $request)
     {
-        $visit_id = Visit::where('uuid', $request->get('uuid'))->first()->id;
+        return 1;
+        $visit_id = Visit::firstOrCreate(['uuid'=>$request->get('uuid')])->id;
         $story_data = SlidePerformanceData::firstOrNew([
             'visit_id'=> $visit_id,
             'slider_id'=> $request->get('slider_id')

@@ -1,0 +1,56 @@
+POST http://127.0.0.1:8000/api/storyPerformanceData
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T012506.422.json
+
+###
+
+POST http://127.0.0.1:8000/api/api/storyPerformanceData
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T012425.404.json
+
+###
+
+POST http://127.0.0.1:8000/api/api/storyPerformanceData
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T012423.404.json
+
+###
+
+POST http://127.0.0.1:8000/api/api/storyPerformanceData
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T012410.404.json
+
+###
+
+POST http://127.0.0.1:8000/api/api/storyPerformanceData
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T012409.404.json
+
+###
+
+POST http://127.0.0.1:8000/api/api/storyPerformanceData
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T012335.404.json
+
+###
+
+GET http://127.0.0.1:8000/api/api/storyPerformanceData
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-14T012326.404.html
+
+###
+

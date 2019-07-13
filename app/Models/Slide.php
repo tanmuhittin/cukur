@@ -34,6 +34,7 @@ class Slide extends Model
         'media_url' => 'string',
         'title' => 'string',
         'action_button' => 'string',
+        'duration' => 'duration',
         'scope' => 'integer',
         'order' => 'integer',
         'created_at' => 'timestamp',

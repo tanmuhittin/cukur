@@ -21,6 +21,7 @@ class SlideResource extends JsonResource
             'title' => $this->title,
             'content' => $this->content,
             'action_button' => $this->action_button,
+            'duration' => $this->duration,
             'score' => $this->score,
             'order' => $this->order,
             'story_id' => $this->story_id,
