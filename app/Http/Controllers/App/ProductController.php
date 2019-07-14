@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\App;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
-use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -35,6 +38,6 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return response()->json([], \Illuminate\Http\Response::HTTP_NO_CONTENT);
+        return new JsonResponse(['message' => 'successfuly deleted.'], Response::HTTP_NO_CONTENT);
     }
 }

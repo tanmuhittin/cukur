@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\App;
 
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -35,6 +37,6 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return response()->json([], \Illuminate\Http\Response::HTTP_NO_CONTENT);
+        return new JsonResponse(['message' => 'successfuly deleted.'], Response::HTTP_NO_CONTENT);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use App\PerformanceData;
+use App\Models\PerformanceData;
 use Illuminate\Database\Seeder;
 
 class PerformanceDataSeeder extends Seeder
@@ -12,6 +12,6 @@ class PerformanceDataSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\PerformanceData::class, 500)->create();
+        factory(PerformanceData::class, 500)->create();
     }
 }

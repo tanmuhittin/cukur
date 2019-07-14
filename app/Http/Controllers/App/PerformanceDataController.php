@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\App;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\PerformanceDataRequest;
-use App\Http\Resources\PerformanceDataResource;
-use App\Jobs\CalculateSlideScore;
-use App\Models\PerformanceData;
 use App\Models\Slide;
 use App\Models\Story;
 use App\Models\Visit;
+use Illuminate\Http\Response;
+use App\Models\PerformanceData;
+use Illuminate\Http\JsonResponse;
+use App\Jobs\CalculateSlideScore;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\PerformanceDataRequest;
+use App\Http\Resources\PerformanceDataResource;
 
 class PerformanceDataController extends Controller
 {
@@ -25,11 +27,11 @@ class PerformanceDataController extends Controller
 
     public function store(PerformanceDataRequest $request)
     {
-        $visit_id = Visit::firstOrCreate(['uuid'=>$request->get('uuid')])->id;
-        $request->merge(['visit_id' => $visit_id]);
+        $visitId = Visit::firstOrCreate(['uuid'=>$request->get('uuid')])->id;
+        $request->merge(['visit_id' => $visitId]);
         $data = $request->except('uuid');
         $model = new PerformanceDataResource(PerformanceData::create($data));
         $this->dispatch(new CalculateSlideScore(Slide::find($model->slide_id)->story->id));
-        return 1;
+        return new JsonResponse(['message' => 'successfully stored.'], Response::HTTP_CREATED);
     }
 }

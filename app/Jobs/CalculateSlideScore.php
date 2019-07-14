@@ -32,13 +32,13 @@ class CalculateSlideScore implements ShouldQueue
      * @return void
      */
     public function handle()
-    {
-        $story = Story::find($this->model_id);
-        $slide_ids = $story->slides()->pluck('id')->all();
-        $calc_data = PerformanceData::whereIn('slide_id',$slide_ids)->take(1000)->orderBy('avg_success','desc')->groupBy('slide_id')->selectRaw('AVG(duration) as avg_duration, AVG(success) as avg_success, slide_id, count(*) as total')->get();
+    {   
         $i = 0;
-        foreach ($calc_data as $cd){
-            $slide = Slide::find($cd->slide_id);
+        $story = Story::find($this->model_id);
+        $slideIds = $story->slides()->pluck('id')->all();
+        $computedData = PerformanceData::whereIn('slide_id',$slideIds)->take(1000)->orderBy('avg_success','desc')->groupBy('slide_id')->selectRaw('AVG(duration) as avg_duration, AVG(success) as avg_success, slide_id, count(*) as total')->get();
+        foreach ($computedData as $data){
+            $slide = Slide::find($data->slide_id);
             $slide->order = $i;
             $slide->save();
             $i++;

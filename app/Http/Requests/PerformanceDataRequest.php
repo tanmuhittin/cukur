@@ -24,10 +24,10 @@ class PerformanceDataRequest extends FormRequest
     public function rules()
     {
         return [
-            'uuid'=>'required',
-            'slide_id'=>'required',
-            'duration'=>'required',
-            'success'=>'required'
+            'uuid'=>'required|uuid',
+            'slide_id'=>'required|integer',
+            'duration'=>'required|integer',
+            'success'=>'required|boolean'
         ];
     }
 }

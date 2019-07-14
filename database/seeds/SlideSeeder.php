@@ -1,6 +1,6 @@
 <?php
 
-use App\Slide;
+use App\Models\Slide;
 use Illuminate\Database\Seeder;
 
 class SlideSeeder extends Seeder
@@ -12,6 +12,6 @@ class SlideSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Slide::class, 60)->create();
+        factory(Slide::class, 60)->create();
     }
 }

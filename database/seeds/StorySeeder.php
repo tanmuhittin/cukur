@@ -1,6 +1,6 @@
 <?php
 
-use App\Story;
+use App\Models\Story;
 use Illuminate\Database\Seeder;
 
 class StorySeeder extends Seeder
@@ -12,6 +12,6 @@ class StorySeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Story::class, 30)->create();
+        factory(Story::class, 30)->create();
     }
 }
