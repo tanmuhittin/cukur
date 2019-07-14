@@ -12,6 +12,6 @@ class PerformanceDataSeeder extends Seeder
      */
     public function run()
     {
-        factory(PerformanceData::class, 500)->create();
+        factory(PerformanceData::class, 0)->create();
     }
 }
