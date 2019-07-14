@@ -31,7 +31,7 @@ class PerformanceDataTest extends TestCase
                 'slide_id' => $slides[0]->id,
                 'duration' => random_int(1, 10),
                 'success' => 0
-            ])->assertOk();
+            ])->assertStatus(201);
 
 
         // verify job is created
@@ -49,7 +49,7 @@ class PerformanceDataTest extends TestCase
                 'slide_id' => $slides[1]->id,
                 'duration' => random_int(1, 10),
                 'success' => 1
-            ])->assertOk();
+            ])->assertStatus(201);
 
 
     }
