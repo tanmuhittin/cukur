@@ -1,9 +1,9 @@
 <?php
 
-use App\SlidePerformanceData;
+use App\PerformanceData;
 use Illuminate\Database\Seeder;
 
-class SlidePerformanceDataSeeder extends Seeder
+class PerformanceDataSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class SlidePerformanceDataSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\SlidePerformanceData::class, 10)->create();
+        factory(\App\Models\PerformanceData::class, 500)->create();
     }
 }

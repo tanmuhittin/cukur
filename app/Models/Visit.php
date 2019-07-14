@@ -37,18 +37,9 @@ class Visit extends Model
     /**
      * Get the StoryPerformanceData for the Visit.
      */
-    public function storyPerformanceData()
+    public function performanceData()
     {
-        return $this->hasMany(StoryPerformanceData::class);
-    }
-
-
-    /**
-     * Get the SlidePerformanceData for the Visit.
-     */
-    public function slidePerformanceData()
-    {
-        return $this->hasMany(SlidePerformanceData::class);
+        return $this->hasMany(PerformanceData::class);
     }
 
 }

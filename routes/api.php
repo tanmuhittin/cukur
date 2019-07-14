@@ -22,8 +22,6 @@ Route::apiResource('slides', 'App\SlideController');
 
 Route::apiResource('visits', 'App\VisitController');
 
-Route::apiResource('storyPerformanceData', 'App\StoryPerformanceDataController');
-
-Route::apiResource('slidePerformanceData', 'App\SlidePerformanceDataController');
+Route::apiResource('performance-data', 'App\PerformanceDataController');
 
 Route::apiResource('users', 'App\UserController');

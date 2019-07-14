@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SlidePerformanceData extends Model
+class PerformanceData extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class SlidePerformanceData extends Model
      * @var array
      */
     protected $fillable = [
-        'slide_id', 'visit_id', 'entered_at', 'leaved_at', 'clicked_at'
+        'slide_id', 'visit_id', 'duration', 'success'
     ];
 
     /**
@@ -30,24 +30,12 @@ class SlidePerformanceData extends Model
      * @var array
      */
     protected $casts = [
-        'entered_at' => 'timestamp',
-        'leaved_at' => 'timestamp',
-        'clicked_at' => 'timestamp',
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];
 
     /**
-     * Get the Slide for the SlidePerformanceData.
-     */
-    public function slide()
-    {
-        return $this->belongsTo(Slide::class);
-    }
-
-
-    /**
-     * Get the Visit for the SlidePerformanceData.
+     * Get the Visit for the PerformanceData.
      */
     public function visit()
     {

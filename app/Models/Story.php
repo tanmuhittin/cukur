@@ -40,16 +40,7 @@ class Story extends Model
      */
     public function slides()
     {
-        return $this->hasMany(Slide::class);
-    }
-
-
-    /**
-     * Get the StoryPerformanceData for the Story.
-     */
-    public function storyPerformanceData()
-    {
-        return $this->hasMany(StoryPerformanceData::class);
+        return $this->hasMany(Slide::class)->orderBy('order');
     }
 
 

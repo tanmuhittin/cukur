@@ -1,8 +1,6 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\SlidePerformanceData;
-use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Carbon\Carbon;
 
@@ -17,12 +15,12 @@ use Carbon\Carbon;
 |
 */
 
-$factory->define(\App\Models\SlidePerformanceData::class, function (Faker $faker) {
+$factory->define(\App\Models\PerformanceData::class, function (Faker $faker) {
+    $probs = [0,0,0,0,0,1];
     return [
-        'slide_id' => random_int(1, 10),
-        'visit_id' => random_int(1, 10),
-        'entered_at' => $faker->dateTimeBetween('-30 years', 'now'),
-        'leaved_at' => $faker->dateTimeBetween('-30 years', 'now'),
-        'clicked_at' => $faker->dateTimeBetween('-30 years', 'now')
+        'slide_id' => random_int(1,60),
+        'visit_id' => random_int(1,10),
+        'duration' => random_int(1,10),
+        'success' => $probs[array_rand($probs)],
     ];
 });

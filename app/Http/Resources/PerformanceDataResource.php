@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SlidePerformanceDataResource extends JsonResource
+class PerformanceDataResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,14 +16,13 @@ class SlidePerformanceDataResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'slide_id' => $this->slide_id,
+            'entity_type' => $this->entity_type,
+            'entity_id' => $this->entity_id,
             'visit_id' => $this->visit_id,
-            'entered_at' => $this->entered_at,
-            'leaved_at' => $this->leaved_at,
-            'clicked_at' => $this->clicked_at,
+            'action_label' => $this->action_label,
+            'action_value' => $this->action_value,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'slide' => new SlideResource($this->whenLoaded('slide')),
             'visit' => new VisitResource($this->whenLoaded('visit'))
         ];
     }

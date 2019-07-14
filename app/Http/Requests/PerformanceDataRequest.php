@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SlidePerformanceDataRequest extends FormRequest
+class PerformanceDataRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,9 @@ class SlidePerformanceDataRequest extends FormRequest
     {
         return [
             'uuid'=>'required',
-            'slider_id'=>'required',
-            'data_label'=>'required',
-            'data_value'=>'required'
+            'slide_id'=>'required',
+            'duration'=>'required',
+            'success'=>'required'
         ];
     }
 }

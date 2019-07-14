@@ -46,7 +46,7 @@ class Slide extends Model
      */
     public function slidePerformanceData()
     {
-        return $this->hasMany(SlidePerformanceData::class);
+        return $this->hasMany(PerformanceData::class);
     }
 
 

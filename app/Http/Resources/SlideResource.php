@@ -26,9 +26,7 @@ class SlideResource extends JsonResource
             'order' => $this->order,
             'story_id' => $this->story_id,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-            'slide_performance_data' => SlidePerformanceDataResource::collection($this->whenLoaded('slide_performance_data')),
-            'story' => new StoryResource($this->whenLoaded('story'))
+            'updated_at' => $this->updated_at
         ];
     }
 }

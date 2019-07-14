@@ -18,9 +18,7 @@ class VisitResource extends JsonResource
             'id' => $this->id,
             'uuid' => $this->uuid,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-            'story_performance_data' => StoryPerformanceDataResource::collection($this->whenLoaded('story_performance_data')),
-            'slide_performance_data' => SlidePerformanceDataResource::collection($this->whenLoaded('slide_performance_data'))
+            'updated_at' => $this->updated_at
         ];
     }
 }

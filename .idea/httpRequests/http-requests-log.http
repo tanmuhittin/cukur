@@ -1,3 +1,113 @@
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=9&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T051248.200.html
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=9&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T050907.200.html
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T050359.200.html
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T041117.200.html
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T041044.500.json
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T041034.500.json
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T040934.200.html
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T040930.200.html
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T040839.200.html
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T040744.500.json
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slide_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T040718.500.json
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=9d633993-9deb-311b-b921-da800bd56d69&slider_id=1&duration=3&success=0
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T040706.422.json
+
+###
+
+POST http://127.0.0.1:8000/api/performance-data?uuid=734c2f56-8d42-38bf-9b84-bb6d35dfc418&entity_id=1&entity_type=story&action_label=test&action_value=number
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-07-14T025328.201.json
+
+###
+
 POST http://127.0.0.1:8000/api/storyPerformanceData
 Accept: application/json
 Cache-Control: no-cache

@@ -21,7 +21,7 @@ use App\Enums\SlideType;
 $factory->define(\App\Models\Slide::class, function (Faker $faker) {
     return [
         'type' => SlideType::Image,
-        'media_url' => $faker->imageUrl(1080,1920),
+        'media_url' => $faker->imageUrl(540,960),
         'title' => $faker->words(3, true),
         'content' => $faker->realText(),
         'action_button' => $faker->sentence(),
